@@ -1,0 +1,61 @@
+[tool.poetry]
+name = "notes-backend"
+version = "0.1.0"
+description = "Backend service for notes and insights management"
+authors = ["Your Name <your.email@example.com>"]
+
+packages = [
+  { include = "notes_backend" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.104.0"
+uvicorn = { extras = ["standard"], version = "^0.23.2" }
+sqlalchemy = "^2.0.23"
+pydantic = "^2.5.3"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.3"
+httpx = "^0.26.0"
+
+
+[tool.poetry.group.dev.dependencies]
+alembic = "^1.14.1"
+flake8 = "^7.1.1"
+black = "^25.1.0"
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = "E203"
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    ".venv",
+    "*.egg-info"
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

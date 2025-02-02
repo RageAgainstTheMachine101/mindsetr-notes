@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info
+.python-version
+venv/
+env/
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Local development
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Testing
+.coverage
+htmlcov/
+
+# Build/dist
+build/
+dist/
+*.egg
+
+# Prompting
+merged.txt
