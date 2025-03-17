@@ -7,7 +7,8 @@ from alembic import context
 
 import os
 from dotenv import load_dotenv
-from notes_backend.database import Base, SQLALCHEMY_DATABASE_URL
+from notes_backend.core.database import Base, SYNC_DATABASE_URL
+from notes_backend.models.profile import Profile  # Import models for Alembic
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -17,7 +18,7 @@ config = context.config
 load_dotenv()
 
 # Override sqlalchemy.url with our database URL
-config.set_main_option("sqlalchemy.url", SQLALCHEMY_DATABASE_URL)
+config.set_main_option("sqlalchemy.url", SYNC_DATABASE_URL)
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
